@@ -1,10 +1,11 @@
+require("dotenv").config();
 
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const keys = ("./keys.js");
-const passWord = keys.password;
+//const keys = ("./keys.js");
+//var password = keys;
 
-
+//console.log(password);
 
 const connection = mysql.createConnection({
   host: "localhost",
@@ -16,7 +17,7 @@ const connection = mysql.createConnection({
   user: "root",
 
   // Your password
-  password: passWord,
+  password: "Billyjoel1",
   database: "bamazon_db"
 });
 
@@ -25,39 +26,36 @@ connection.connect(function(err) {
 });
 
 function fullDisplay() {
-    query = 'SELECT * FROM products';
+  query = "SELECT * FROM products";
 
-    // Make the db query
-    connection.query(query, function (err, data) {
-        if (err) throw err;
+  // Make the db query
+  connection.query(query, function(err, data) {
+    if (err) throw err;
 
-        console.log('Existing Inventory: ');
-        console.log('...................\n');
+    console.log("Existing Inventory: ");
+    console.log("...................\n");
 
-        let string = '';
+    let info = "";
 
-        for (var i = 0; i < data.length; i++) {
-            string = '';
-            string += 'Item: ' + data[i].ID + ', ';
-            string += 'Product Name: ' + data[i].product_name + ', ';
-            string += 'Department: ' + data[i].department_name + ', ';
-            string += 'Price: $' + data[i].price + '\n';
+    for (var i = 0; i < data.length; i++) {
+      info = "";
+      info += "Item: " + data[i].ID + ", ";
+      info += "Product Name: " + data[i].product_name + ", ";
+      info += "Department: " + data[i].department_name + ", ";
+      info += "Price: $" + data[i].price + "\n";
+      console.log(info);
+    }
+    console.log("-------------------------------------------------\n");
+  });
+}
 
-            console.log(string);
-        }
-        console.log("-------------------------------------------------\n");
-})
-};
 
-
-function productNameSearch() {
+function productName() {
   var query = "SELECT product_name FROM products";
   connection.query(query, function(err, res) {
     for (var i = 0; i < res.length; i++) {
       console.log(res[i].product_name);
     }
-    
   });
 }
-
 

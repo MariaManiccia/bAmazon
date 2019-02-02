@@ -19,6 +19,7 @@
   "homepage": "https://github.com/MariaManiccia/bAmazon#readme",
   "dependencies": {
     "dotenv": "^6.2.0",
+    "exports": "0.0.1",
     "inquirer": "^6.2.1",
     "mysql": "^2.16.0"
   }
