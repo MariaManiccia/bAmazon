@@ -2,21 +2,15 @@ require("dotenv").config();
 
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-//const keys = ("./keys.js");
-//var password = keys;
 
-//console.log(password);
-
+// connect with a mySql database
 const connection = mysql.createConnection({
   host: "localhost",
 
-  // Your port; if not 3306
   port: 3306,
 
-  // Your username
   user: "root",
 
-  // Your password
   password: "Billyjoel1",
   database: "bamazon_db"
 });
@@ -25,6 +19,7 @@ connection.connect(function(err) {
   if (err) throw err;
 });
 
+// first function to display the inventory
 function fullDisplay() {
   query = "SELECT * FROM products";
 
@@ -49,6 +44,24 @@ function fullDisplay() {
   });
 }
 
+function startGame() {
+  inquirer
+    .prompt({
+      name: "input",
+      type: "input",
+      message: "What is the ID of the product you would like to purchase?"
+    })
+    .then(function(answer) {
+      var query = "SELECT stock_quantity FROM products WHERE ?";
+      connection.query(query, { ID: answer.input }, function(err, res) {
+       var productQuant = res;
+       console.log(productQuant);
+      });
+      
+    });
+}
+
+startGame();
 
 function productName() {
   var query = "SELECT product_name FROM products";
@@ -58,4 +71,3 @@ function productName() {
     }
   });
 }
-
