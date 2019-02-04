@@ -11,7 +11,7 @@ const connection = mysql.createConnection({
 
   user: "root",
 
-  password: "Billyjoel1",
+  password: "",
   database: "bamazon_db"
 });
 
@@ -46,19 +46,47 @@ function fullDisplay() {
 
 function startGame() {
   inquirer
-    .prompt({
-      name: "input",
-      type: "input",
-      message: "What is the ID of the product you would like to purchase?"
-    })
+    .prompt([{
+      name: 'input',
+      type: 'productId',
+      message: 'What is the ID of the product you would like to purchase?',
+      validate: validateInput,
+      filter: Number
+    },
+    {
+      type: 'input',
+      name: 'quantity',
+      message: 'How many would you like?',
+      validate: validateInput,
+      filter: Number
+  }])
     .then(function(answer) {
-      var query = "SELECT stock_quantity FROM products WHERE ?";
-      connection.query(query, { ID: answer.input }, function(err, res) {
-       var productQuant = res;
-       console.log(productQuant);
+
+      var query = "SELECT * FROM products WHERE ?";
+      connection.query(query, { ID: answer.productId }, function(err, res) {
+
+       var product = res;
+       console.log(product)
       });
-      
+
+      var query = "SELECT * FROM products WHERE ?";
+      connection.query(query, { ID: answer.quantity }, function(err, res) {
+
+       var product = res;
+       console.log(product)
+      });
     });
+}
+
+function validateInput(value) {
+  var integer = Number.isInteger(parseFloat(value));
+  var sign = Math.sign(value);
+
+  if (integer && (sign === 1)) {
+      return true;
+  } else {
+      return 'Please enter a whole number larger than zero.';
+  }
 }
 
 startGame();
