@@ -35,4 +35,10 @@ If not, the app should then prevent the order from going through.
 2) If a manager selects View Low Inventory, then it should list all items with an inventory count lower than five.
 <img src="./images/lowQuant.png" alt="Low Quantity View">
 <br>
+3) If a manager selects Add to Inventory, the app will display a prompt that will let the manager "add more" of any item currently in the store.
+<img src="./images/addinventory.png" alt="Adding inventory page">
+<br>
+4) If a manager selects Add New Product, it will allow the manager to add a completely new product to the store.
+<img src="./images/.png" alt="">
+<br>
 
