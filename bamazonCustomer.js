@@ -28,7 +28,7 @@ function fullDisplay() {
     if (err) throw err;
 
     console.log("Existing Inventory: ");
-    console.log("...................\n");
+    console.log("-------------------\n");
 
     let info = "";
 
