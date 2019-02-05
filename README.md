@@ -4,6 +4,7 @@
 
 <h2>Here are the instructions::</h2>
 
+<h3>When running the bamazonCustomer page</h3>
 1) Create a MySQL Database 
 <img src="./images/SQL.png" alt="SQL Workbench screenshot">
 <br>
@@ -20,5 +21,14 @@ The database is also updated at that time.
 <img src="./images/SQLupdate.png" alt="SQL Workbench update">
 If not, the app should then prevent the order from going through.
 <img src="./images/noMore.png" alt="Insufficiant quantity photo">
+<br>
+
+<h3>When running the bamazonCustomer page</h3>
+<br>
+<h4>Pick from a selection of options on this page!</h4>
+<img src="./images/managerStart.png" alt="Manager start up page">
+<br>
+1) If a manager selects View Products for Sale, the app can list every available item: the item IDs, names, prices, and quantities.
+<img src="./images/products.png" alt="Products View">
 <br>
 

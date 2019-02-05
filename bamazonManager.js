@@ -30,7 +30,8 @@ function startPage() {
                     "View Products for Sale",
                     "View Low Inventory",
                     "Add to Inventory",
-                    "Add New Product"
+                    "Add New Product",
+                    ""
                 ]
             }
 
@@ -46,10 +47,11 @@ function startPage() {
                     lowInventory();
                     break;
                 case "Add to Inventory":
-                    // code block
+                    addInventory();
                     break;
                 case "Add New Product":
                     // code block
+                   
                     break;
             }
         });
@@ -73,6 +75,8 @@ function productName() {
     })
 };
 
+
+// function to check for low inventory
 function lowInventory() {
 
     var query = "SELECT * FROM products";
@@ -90,8 +94,13 @@ function lowInventory() {
                 console.log("-");
             }
         }
-        startPage();
     });
+};
+
+function addInvetnory(){
+
+
+
 };
 
 startPage();
