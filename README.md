@@ -22,8 +22,9 @@ The database is also updated at that time.
 If not, the app should then prevent the order from going through.
 <img src="./images/noMore.png" alt="Insufficiant quantity photo">
 <br>
+<br>
 
-<h3>When running the bamazonCustomer page</h3>
+<h3>When running the bamazonManager page</h3>
 <br>
 <h4>Pick from a selection of options on this page!</h4>
 <img src="./images/managerStart.png" alt="Manager start up page">
