@@ -32,4 +32,7 @@ If not, the app should then prevent the order from going through.
 1) If a manager selects View Products for Sale, the app can list every available item: the item IDs, names, prices, and quantities.
 <img src="./images/products.png" alt="Products View">
 <br>
+2) If a manager selects View Low Inventory, then it should list all items with an inventory count lower than five.
+<img src="./images/lowQuant.png" alt="Low Quantity View">
+<br>
 
