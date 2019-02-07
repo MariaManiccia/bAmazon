@@ -39,6 +39,6 @@ If not, the app should then prevent the order from going through.
 <img src="./images/addInventory.png" alt="Adding inventory page">
 <br>
 4) If a manager selects Add New Product, it will allow the manager to add a completely new product to the store.
-<img src="./images/.png" alt="">
+<img src="./images/newProduct.png" alt="New Product Added View">
 <br>
 
