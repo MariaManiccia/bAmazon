@@ -42,3 +42,5 @@ If not, the app should then prevent the order from going through.
 <img src="./images/newProduct.png" alt="New Product Added View">
 <br>
 
+Thank you to everyone involved!
+
